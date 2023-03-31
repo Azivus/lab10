@@ -3,18 +3,18 @@
 #include <stdlib.h>
 #include <check.h>
 
-START_TEST(test_lab05_standart)
+START_TEST(test1_lab05_basic)
 {
-	int test_x = 20;
+	int test_x = 15;
 	int test_y = 1;
-	int test_result = 19;
+	int test_result = 14;
 	int actual_result = lab05(test_x, test_y);
 
 	ck_assert_int_eq(test_result, actual_result);
 }
 END_TEST
 
-START_TEST(test_lab05_y_more_x)
+START_TEST(test2_lab05y_more_x)
 {
 	int test_x = 1;
 	int test_y = 20;
@@ -25,7 +25,7 @@ START_TEST(test_lab05_y_more_x)
 }
 END_TEST
 
-START_TEST(test_lab05_x_eq_y)
+START_TEST(test3_lab05x_eq_y)
 {
 	int test_x = 20;
 	int test_y = 20;
@@ -36,7 +36,7 @@ START_TEST(test_lab05_x_eq_y)
 }
 END_TEST
 
-START_TEST(test_lab06_standart)
+START_TEST(test1_lab06_basic)
 {
 	int a = 1000;
 	long int expected[63] = { 1001, 1010, 1102, 1111, 1120, 1203, 1212, 1221, 1230, 1304, 1313, 1322, 1331, 1340, 1405, 1414,
@@ -51,7 +51,7 @@ START_TEST(test_lab06_standart)
 }
 END_TEST
 
-START_TEST(test_lab06_max_const)
+START_TEST(test2_lab06_max_const)
 {
 	int a = 2000;
 	long int expected = 0;
@@ -62,7 +62,7 @@ START_TEST(test_lab06_max_const)
 }
 END_TEST
 
-START_TEST(test_lab06_a_less_mini_const)
+START_TEST(test3_lab06_a_under_mini_const)
 {
 	int a = 999;
 	long int expected = 0;
@@ -72,7 +72,7 @@ START_TEST(test_lab06_a_less_mini_const)
 }
 END_TEST
 
-START_TEST(test_lab06_a_more_max_const)
+START_TEST(test4_lab06_a_more_max_const)
 {
 	int a = 2001;
 	long int expected = 0;
@@ -92,16 +92,16 @@ Suite *lab_test_suite(void)
 
 	tc_lab05 = tcase_create("lab_05");
 
-	tcase_add_test(tc_lab05, test_lab05_standart);
-	tcase_add_test(tc_lab05, test_lab05_y_more_x);
-	tcase_add_test(tc_lab05, test_lab05_x_eq_y);
+	tcase_add_test(tc_lab05, test1_lab05_basic);
+	tcase_add_test(tc_lab05, test2_lab05y_more_x);
+	tcase_add_test(tc_lab05, test3_lab05x_eq_y);
 
 	tc_lab06 = tcase_create("lab_06");
 
-	tcase_add_test(tc_lab06, test_lab06_standart);
-	tcase_add_test(tc_lab06, test_lab06_max_const);
-	tcase_add_test(tc_lab06, test_lab06_a_less_mini_const);
-	tcase_add_test(tc_lab06, test_lab06_a_more_max_const);
+	tcase_add_test(tc_lab06, test1_lab06_basic);
+	tcase_add_test(tc_lab06, test2_lab06_max_const);
+	tcase_add_test(tc_lab06, test3_lab06_a_under_mini_const);
+	tcase_add_test(tc_lab06, test4_lab06_a_more_max_const);
 
 	suite_add_tcase(s, tc_lab05);
 	suite_add_tcase(s, tc_lab06);

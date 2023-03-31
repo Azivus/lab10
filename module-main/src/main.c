@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> // чтобы использовать функцию time()
+#include <time.h> 
 #include "lib.h"
 
 int main(int argc, char *argv[])
